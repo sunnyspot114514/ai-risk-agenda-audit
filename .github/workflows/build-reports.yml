@@ -25,6 +25,13 @@ jobs:
         run: |
           cat .bootstrap/report_en.* > report_en.tex
           cat .bootstrap/report_zh.* > report_zh.tex
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('report_zh.tex')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('\\]\n\\]\n\n\\begin{figure}', '\\]\n\n\\begin{figure}', 1)
+          p.write_text(s, encoding='utf-8')
+          PY
           echo '4428b293a47c3af767316e7e0766e0d00c08ae3e68695ab2bafbf64bb8133a0b  report_en.tex' | sha256sum -c -
           echo '03dcb2153795d9656d23c15bf8719495657f62028fb2a67fa98fdbaeed6c476b  report_zh.tex' | sha256sum -c -
           echo '84195c8ddb85d07d6fa556d45dc764a6f0ee99b468607914b6d846f068feee69  source_ledger.tex' | sha256sum -c -
@@ -35,7 +42,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             texlive-xetex texlive-latex-extra texlive-pictures texlive-lang-chinese \
-            fonts-ebgaramond fonts-noto-core fonts-noto-cjk fonts-dejavu-core
+            fonts-ebgaramond fonts-noto-core fonts-noto-cjk fonts-dejavu-core poppler-utils
           fc-cache -f
 
       - name: Build PDFs
