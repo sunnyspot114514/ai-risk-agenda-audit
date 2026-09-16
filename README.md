@@ -1,58 +1,58 @@
 # Who Sets the AI Risk Agenda?
 
-Open-source audit of funding, evidence production, evaluator concentration, and communication
-infrastructure in the frontier AI safety ecosystem.
+[🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
-This repository contains two parallel report editions:
+**An open-source audit of funding, evidence production, evaluator concentration, and communication infrastructure in the frontier AI safety ecosystem.**
 
-- `ai_risk_agenda_en.pdf` / `report_en.tex` - English
-- `ai_risk_agenda_zh.pdf` / `report_zh.tex` - 中文版
+This project examines a testable structural question: when a small set of funders, talent programs, third-party evaluators, and communication institutions repeatedly appear in the same field, how does that structure affect the production, replication, and public visibility of AI-risk claims?
 
-Both editions use the same evidence ledger and machine-readable data. The final substantive section in
-each report is **Limitations and Open Questions / 限制与未决问题**.
+The analysis uses public filings, audited financial disclosures, official grant records, incident postmortems, system cards, organizational disclosures, reputable journalism, and peer-reviewed research. Relationships are typed rather than collapsed: funding, employment, model access, evaluation contracts, media fellowships, and policy advocacy are recorded separately.
 
-## Reproducibility files
+## Core materials
 
-- `sources.csv` - source IDs, URLs, evidence grades, and notes
-- `claims.csv` - claim-to-source mapping and claim status
-- `funding_edges.csv` - typed funding and organizational edges
-- `evaluator_edges.csv` - release/evaluator edges used in the evaluator concentration pilot
-- `metrics.csv` - derived concentration measures and scope statements
-- `source_ledger.tex` - clickable source ledger embedded in both PDFs
-- `TEXT_AUDIT.md` - academic-humanizer audit and revision log
+- [`funding_edges.csv`](funding_edges.csv) — funding and organizational relationships
+- [`evaluator_edges.csv`](evaluator_edges.csv) — selected model release families and external evaluators
+- [`metrics.csv`](metrics.csv) — concentration measures, derived values, and scope statements
+- [`TEXT_AUDIT.md`](TEXT_AUDIT.md) — academic-humanizer text audit and revision log
+- [`preflight_en.txt`](preflight_en.txt) / [`preflight_zh.txt`](preflight_zh.txt) — PDF preflight records
+- [`report_style.tex`](report_style.tex) — shared LaTeX style for both editions
+- [`build.sh`](build.sh) — XeLaTeX build script
 
-## Build
+The complete release bundle also contains the English and Chinese reports, a clickable Source Ledger, claim-to-source mappings, and machine-readable source tables. Both language editions share the same underlying evidence data.
 
-Requires XeLaTeX, EB Garamond, Noto Sans, Noto Serif CJK SC, TikZ/PGFPlots, and the LaTeX packages used
-by `report_style.tex`.
+## Evidence rules
+
+| Grade | Meaning |
+|---|---|
+| **A** | Official filings, audited financials, official grant databases, incident reports, system cards, or peer-reviewed research |
+| **B** | An organization's own transparency, program, strategy, or policy pages |
+| **C** | Reputable secondary journalism |
+| **D** | Public career history only |
+| **U** | Lead not yet verified from a primary source |
+
+A recorded edge establishes only that the relationship is supported by public evidence. Stronger claims about motive, editorial control, research quality, or coordination require separate evidence.
+
+## Reproducibility
+
+Derived metrics retain explicit scope. For example, the MATS donor HHI describes only its disclosed 2025 cash donations, while the evaluator HHI describes only the selected OpenAI release-family pilot. Metrics without a sufficiently stable estimate are left blank rather than inferred from a handful of cases.
+
+Building the reports requires XeLaTeX, EB Garamond, Noto Sans, Noto Serif CJK SC, TikZ/PGFPlots, and the LaTeX packages used by [`report_style.tex`](report_style.tex):
 
 ```bash
 ./build.sh
 ```
 
-The build script compiles each report twice so the table of contents and page references settle.
+The script compiles both editions twice so the table of contents and page references settle.
 
-## Evidence conventions
+## Text and design
 
-- **A**: filings, audited financials, official grant databases, incident reports, system cards, or
-  peer-reviewed research
-- **B**: an organization's own transparency, program, strategy, or policy page
-- **C**: reliable secondary journalism
-- **D**: public career history only
-- **U**: unresolved lead
+The report style was written from scratch. Visual mechanisms were inspired by:
 
-Funding, equity, employment, model access, evaluation contracts, media fellowships, and advocacy are
-stored as different relationship types. A network edge is not treated as evidence of motive or control.
-
-## Design and editing references
-
-The typesetting borrows visual mechanisms, not code, from:
-
-- https://github.com/Foadsf/vintage-latex
-- https://github.com/jemmybutton/fiziko
+- [Foadsf/vintage-latex](https://github.com/Foadsf/vintage-latex)
+- [jemmybutton/fiziko](https://github.com/jemmybutton/fiziko)
 
 The prose audit adapts claim-evidence and academic AI-writing guidance from:
 
-- https://github.com/AIScientists-Dev/academic-humanizer
+- [AIScientists-Dev/academic-humanizer](https://github.com/AIScientists-Dev/academic-humanizer)
 
-The report style in this repository was written from scratch. No font files are included.
+No font files are included in this repository.
