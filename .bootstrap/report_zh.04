@@ -1,0 +1,29 @@
+\item MATS FCI 只描述 2025 年公开现金捐赠，不能外推为整个 AI safety sector 的 donor HHI。
+\item ECI pilot 的适用范围仅为四个选定 OpenAI release families，不能作为全行业 evaluator census。
+\item SCI 尚未形成稳定估计。下一版需要对 50--100 篇 catastrophic-AI 报道预先固定编码规则，并加入普通 AI 新闻的 matched controls。
+\item 公开资料仍不能确认 Moskovitz 捐出的 Anthropic stake 具体由哪个 nonprofit legal entity 持有。Forbes 报道为一个 nonprofit vehicle；Good Ventures Foundation 的公开 IRS 摘要不足以完成该资产归属。\src{S07}\src{S08}\src{S09}
+\item 多家 evaluator 的 commercial-contract 金额和免费模型/compute access 的非现金经济价值并不完整公开。
+\item Irregular 事故整改是否接受过公开、独立的第三方 attestation，目前未找到足够材料。
+\item 人才网络重叠可能部分来自小型专业领域的正常专业化。要区分专业化与回声筒效应，需要与其他技术政策领域做基准比较。
+\item 资金关系、职业关系和模型访问关系只能证明结构条件，不能单独证明研究结论错误、编辑受控或存在不当协调。
+\end{itemize}
+
+\subsection*{可复现性}
+本报告随 PDF 提供 \texttt{sources.csv}、\texttt{claims.csv}、\texttt{funding\_edges.csv}、\texttt{evaluator\_edges.csv} 与 \texttt{metrics.csv}。所有派生数字都在相应文件中保留 scope 字段。
+
+\subsection*{文本与设计方法}
+正文按 \href{https://github.com/AIScientists-Dev/academic-humanizer}{academic-humanizer} 的写作原则做过人工审计：减少模板化过渡、空泛强调、过强动词和机械对称结构；保留证据约束下的 hedging、数字和来源。视觉样式参考 \href{https://github.com/Foadsf/vintage-latex}{vintage-latex} 与 \href{https://github.com/jemmybutton/fiziko}{fiziko} 的科学文档设计机制，但未复制其模板或图形源码。
+
+\clearpage
+\section{Source Ledger：逐条溯源}
+\small
+A/B/C 仅表示来源类型与直接性。URL 可直接打开原始页面。
+\medskip
+\input{source_ledger.tex}
+\normalsize
+
+\printerrule
+\begin{center}
+\footnotesize 版本 1.0 · 公开来源截至 2026-09-17
+\end{center}
+\end{document}
