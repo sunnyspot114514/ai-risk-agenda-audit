@@ -8,17 +8,27 @@ This project examines a testable structural question: when a small set of funder
 
 The analysis uses public filings, audited financial disclosures, official grant records, incident postmortems, system cards, organizational disclosures, reputable journalism, and peer-reviewed research. Relationships are typed rather than collapsed: funding, employment, model access, evaluation contracts, media fellowships, and policy advocacy are recorded separately.
 
+## Reports
+
+- [English report — PDF, 17 pages](ai_risk_agenda_en.pdf)
+- [中文报告 — PDF, 16 pages](ai_risk_agenda_zh.pdf)
+- [English LaTeX source](report_en.tex)
+- [中文 LaTeX 源码](report_zh.tex)
+
+Both editions use the same evidence ledger and machine-readable provenance data.
+
 ## Core materials
 
+- [`sources.csv`](sources.csv) — source IDs, URLs, evidence grades, and notes
+- [`claims.csv`](claims.csv) — claim-to-source mappings, verification status, and limitations
 - [`funding_edges.csv`](funding_edges.csv) — funding and organizational relationships
 - [`evaluator_edges.csv`](evaluator_edges.csv) — selected model release families and external evaluators
 - [`metrics.csv`](metrics.csv) — concentration measures, derived values, and scope statements
+- [`source_ledger.tex`](source_ledger.tex) — clickable source ledger embedded in both reports
 - [`TEXT_AUDIT.md`](TEXT_AUDIT.md) — academic-humanizer text audit and revision log
 - [`preflight_en.txt`](preflight_en.txt) / [`preflight_zh.txt`](preflight_zh.txt) — PDF preflight records
 - [`report_style.tex`](report_style.tex) — shared LaTeX style for both editions
 - [`build.sh`](build.sh) — XeLaTeX build script
-
-The complete release bundle also contains the English and Chinese reports, a clickable Source Ledger, claim-to-source mappings, and machine-readable source tables. Both language editions share the same underlying evidence data.
 
 ## Evidence rules
 
@@ -42,7 +52,7 @@ Building the reports requires XeLaTeX, EB Garamond, Noto Sans, Noto Serif CJK SC
 ./build.sh
 ```
 
-The script compiles both editions twice so the table of contents and page references settle.
+The script compiles both editions twice so the table of contents and page references settle. The GitHub Actions workflow also rebuilds the PDFs from the canonical LaTeX sources and checks the expected 17-page English / 16-page Chinese outputs.
 
 ## Text and design
 
