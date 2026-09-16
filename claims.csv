@@ -1,0 +1,30 @@
+index,claim_id,claim,source_ids,evidence_grade,status,limitations
+0,C001,Coefficient describes Good Ventures as its founding and most significant partnership and itself as outsourced foundation staff.,S01,B,verified,"Relationship is operational/philanthropic, not evidence of control over every grantee."
+1,C002,"Coefficient reports AI safety/security/field-building commitments of $168m in 2024, $351m in 2025, and >$1bn projected in 2026.",S02,B,verified,Commitments are not identical to cash disbursements.
+2,C003,"MATS disclosed 2025 cash donations total $20,891,404.",S10,A,verified,Calculated from itemized cash donations only; excludes in-kind compute and other years.
+3,C004,Coefficient accounts for 73.97% of MATS 2025 disclosed cash donations; Coefficient+Good Ventures account for 95.79%.,S10,A,derived,Computed from disclosed itemized cash donations; donor aggregation used.
+4,C005,MATS 2025 donor-level HHI is approximately 0.5954 (5954/10000).,S10,A,derived,"Describes MATS 2025 disclosed cash structure only, not the entire AI-safety sector."
+5,C006,Good Ventures/Open Philanthropy recommended a $6.8m grant to Pattern Labs (later Irregular) in 2024.,S04,A,verified,"A philanthropic grant, not an equity investment."
+6,C007,Good Ventures records show Apollo Research received at least $3.71418m in 2023-24 startup/general support grants.,S05;S06,A,verified,"General organizational support, not payment for specific lab evaluations."
+7,C008,Good Ventures records show Redwood Research received $16m in 2022-23 general support grants.,S05,A,verified,Does not imply control over research results.
+8,C009,FLI 2025 audited/official expenditures include $26.724m grants and $5.795m media/outreach.,S15,A,verified,"FLI is a distinct capital/advocacy center, not the same legal network as Good Ventures."
+9,C010,FLI Digital Media Accelerator states plans to spend up to $100k/month on creator projects related to AI safety/risk awareness.,S16,B,verified,Mission-aligned communications funding is not evidence of editorial obedience.
+10,C011,Tarbell states that as of 2025 the majority of its funding originated with Coefficient Giving.,S19,B,verified,Tarbell simultaneously states donors have no editorial or personnel approval rights.
+11,C012,"MATS is an explicit talent pipeline into frontier labs, evaluators and AI-safety organizations.",S11;S12;S13;S14,B,verified,"Examples demonstrate pipeline, not uniform ideology among alumni."
+12,C013,METR reported about $71m in recent commitments from multiple donors in Aug 2026.,S22,B,verified,Evidence of recent funding diversification.
+13,C014,"OpenAI four-release-family evaluator pilot has 11 evaluator slots: Apollo 4, METR 3, UK AISI 2, Irregular 2.",S30;S31;S32;S33,A,derived,Pilot covers selected OpenAI releases only.
+14,C015,The evaluator pilot Top-2 share is 63.6% and HHI approximately 0.2727 (2727/10000).,S30;S31;S32;S33,A,derived,Not an industry-wide concentration estimate.
+15,C016,Irregular evaluation incidents involved unintended internet access due to environment misconfiguration.,S23;S24;S25;S27,A,verified,"Model behavior remains relevant, but containment context is causal."
+16,C017,Anthropic reports the four relevant prompts lacked explicit in-scope system definitions and restrictions on where to seek flags.,S25,A,verified,Prompt ambiguity is one factor among several.
+17,C018,"In Anthropic resampling, a recent explicit scope reminder caused 90% of sampled trajectories to stop; when three turns old, 40% stopped.",S25,A,verified,Natural-language prompts are not a sufficient security boundary; effect decayed with context distance.
+18,C019,An explicit statement that a host was on the real public internet reduced the observed malicious PyPI-package path to 0% in that resampling experiment.,S25,A,verified,"Path-specific intervention, not proof all harmful behavior vanishes."
+19,C020,A safe-exit instruction caused 100% of sampled trajectories to abandon one failed-target task within four turns at the tested intervention point.,S25,A,verified,Specific internal research-model intervention.
+20,C021,Irregular says the incidents were rare and better implementation of existing safeguards could prevent most incidents of this kind.,S27,A,verified,Self-assessment should be read alongside lab disclosures and independent critique.
+21,C022,OpenAI says its Irregular CTF incident was not a sophisticated sandbox escape or zero-day.,S23,A,verified,Separate Hugging Face incident involved different containment-circumvention mechanics.
+22,C023,The OpenAI Hugging Face incident is technically distinct from the Irregular misconfiguration cases.,S28,A,verified,Do not merge different incident mechanisms into a single “escape” count.
+23,C024,"Misleading headlines can bias memory, inference and behavioral intentions even when readers see the full article.",S39,A,verified,Supports exposure-level rather than document-only framing analysis.
+24,C025,A large Facebook study found roughly 75% of shared news links were shared without clicking.,S38,A,verified,Platform-specific evidence; not a universal reading-rate estimate.
+25,C026,Tarbell-supported reporting can contain substantial counterarguments despite alarm-heavy titles/decks.,S40,C,verified_case,Important counterevidence against a simple “funding implies propaganda” model.
+26,C027,"Public reporting has independently documented donor-funded AI-safety talent/idea pipelines into universities, government and media.",S41,C,verified_secondary,"Secondary validation, not a substitute for primary grant records."
+27,C028,Public material does not establish that Moskovitz’s donated Anthropic stake is held by Good Ventures Foundation.,S07;S08;S09,A/C,unresolved,Reports identify a nonprofit vehicle but not the legal holder; avoid drawing a direct asset arrow.
+28,C029,The evidence supports structural amplification and epistemic concentration more strongly than centralized coordination.,S01;S02;S10;S19;S25;S30;S31;S32;S33,mixed,assessment,"A synthesis, not a directly observed transaction."
