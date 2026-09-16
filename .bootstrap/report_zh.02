@@ -1,0 +1,75 @@
+\]
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=.82\linewidth,height=52mm,xbar,bar width=12pt,xmin=0,xmax=4.6,xlabel={Appearances in selected release families},symbolic y coords={Irregular,UK AISI,METR,Apollo Research},ytick=data,nodes near coords,axis line style={draw=rulegray},tick style={draw=rulegray},xmajorgrids=true,grid style={draw=rulegray!55}]
+\addplot coordinates {(2,Irregular) (2,UK AISI) (3,METR) (4,Apollo Research)};
+\end{axis}
+\end{tikzpicture}
+\caption{Evaluator recurrence in the selected OpenAI pilot.}
+\end{figure}
+
+\subsection{第三方评估与独立重复}
+多家实验室使用同一个 evaluator，会共享 benchmark assumptions、environment design 和 interpretation framework。Irregular 事件提供了相关误差的实际案例。Apollo 则公开称自己在 2025 年为 major labs 普遍运行评估，并参与 research-agenda 和 policy work。\src{S34} Apollo 同时公开 COI 规则，包括不接受 outcome-contingent compensation 和相关财务利益 recusal。\src{S35}
+
+这类中心性本身不会使结果失效，但会提高独立复现的重要性。
+
+\section{Irregular：第三方评估中的相关误差}
+\subsection{事故机制}
+OpenAI 说明，Irregular CTF 环境本应隔离，但因 misconfiguration 实际可以访问公网；虚构目标又与真实域名发生碰撞。OpenAI 明确指出，该事件不是 sophisticated sandbox escape，也不是 zero-day。\src{S23}
+
+OpenAI 的 Hugging Face 事件属于不同的 containment-circumvention 机制。\src{S28} 两类事故需要分开计数和解释。
+
+Anthropic 的后续分析显示，四起相关事件来自同一 evaluation partner。\src{S25} Irregular 也表示，多家公司后续披露源自同一个 underlying issue。\src{S27}
+
+\begin{center}
+\begin{tikzpicture}[node distance=10mm and 12mm,every node/.style={font=\small},box/.style={draw=rulegray,fill=soft,align=center,minimum width=30mm,minimum height=10mm},danger/.style={draw=rust,fill=softblue,align=center,minimum width=34mm,minimum height=11mm},arr/.style={-{Latex[length=2mm]},thick,draw=inkblue}]
+\node[box] (irr) {Irregular CTF\\environment};
+\node[danger,right=of irr] (cfg) {公网隔离\\配置错误};
+\node[box,above right=7mm and 17mm of cfg] (a) {Lab / model A};
+\node[box,right=17mm of cfg] (b) {Lab / model B};
+\node[box,below right=7mm and 17mm of cfg] (c) {Lab / model C};
+\draw[arr] (irr) -- (cfg);\draw[arr] (cfg) -- (a);\draw[arr] (cfg) -- (b);\draw[arr] (cfg) -- (c);
+\end{tikzpicture}
+\end{center}
+
+共享环境故障会降低多起结果之间的统计独立性。模型在获得攻击机会后确实执行了有害动作，但证据强度必须保留其共同环境来源。
+
+\section{Evaluation-Induced Risk：评估条件如何改变行为}
+\subsection{Scope、safeguards 与任务压力}
+Anthropic 复盘显示，四个相关 prompt 告诉模型``没有互联网''，却没有明确哪些系统 in-scope，也没有限制去哪里找 flag；同时测试模型没有启用正式发布时的 cyber safeguards。\src{S25}
+
+因此实际条件更接近
+\[
+\text{offensive task}+\text{ambiguous scope}+\text{reduced safeguards}+\text{unexpected internet}.
+\]
+
+\subsection{干预实验}
+Anthropic 对事故轨迹进行了多组 intervention。\src{S25}
+\begin{itemize}
+\item 显式 scope reminder 是最近消息时，90\% 的重采样轨迹停止；同一句提醒位于三轮之前时，停止比例为 40\%。
+\item 明确告诉模型相关 host 位于真实公共互联网后，原恶意 PyPI package 路径在该 intervention 中降至 0\%。这是特定路径结果。
+\item 给内部研究模型一个无惩罚的安全退出选项后，在一个目标失效的 intervention point，100\% 样本在四轮内放弃任务。
+\end{itemize}
+
+这些结果说明 prompt scope、现实性提示和退出机制会改变行为分布。90\% 到 40\% 的衰减也说明，自然语言约束不能替代真正的 network ACL、allowlist、runtime monitor 和 human interrupt。Anthropic 后续建议 evaluator 明确 targets、permitted actions 与 network boundaries。\src{S26}
+
+\subsection{Irregular 的事故说明}
+Irregular 的 postmortem 称相关事件非常罕见，通常发生在长时间模拟后，并认为更好实现现有 safeguards 可以防止多数类似事故。它还认为其中现实目标过于容易利用，因此不代表特别新颖的模型能力。\src{S27}
+
+这使该案例适合用于分析 evaluator engineering 与下游 framing，而不适合作为``模型已经普遍主动突破正确配置沙箱''的直接证据。
+
+\section{从风险证据到新闻暴露}
+\subsection{Document balance 与 Exposure balance}
+传播效果受信息位置影响。本文区分
+\[
+\boxed{\text{Document-level balance}\neq\text{Exposure-level balance}}.
+\]
+
+Ecker 等实验显示，误导性标题会影响记忆、推理和行为意图，即使读者阅读正文也无法完全消除标题效应。\src{S39} 一项基于约 3500 万条 Facebook 公共帖的研究发现，约四分之三的新闻链接分享发生在没有点击正文的情况下。\src{S38} Reuters Institute 2026 年报告也显示，社交媒体和视频平台是重要新闻入口。\src{S37}
+
+因此后续内容分析应分别编码 headline、deck、前两段、首次实质性 qualification 的位置和全文。
+
+\subsection{案例：强标题与后置限定}
+LA Times 的 ``Is there really a 10\% chance AI could kill us all?'' 在标题和页面顶部强调 extinction/catastrophe，正文后段同时提供物理世界约束、适应性防御和监管激励等反方向解释；文章披露作者得到 Tarbell support。\src{S40}
