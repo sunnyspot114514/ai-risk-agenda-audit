@@ -1,0 +1,27 @@
+\item SCI is not yet robustly estimated. A next edition should predefine a coding protocol for 50--100 catastrophic-AI news articles and include matched controls from ordinary AI coverage.
+\item Public records do not yet identify the nonprofit legal entity that holds Moskovitz's donated Anthropic stake. Forbes reports a nonprofit vehicle; the public IRS summary for Good Ventures Foundation does not resolve the asset ownership.\src{S07}\src{S08}\src{S09}
+\item Commercial-contract values for several evaluators and the non-cash value of free model or compute access remain incomplete.
+\item The review did not find sufficient public evidence of an independent third-party attestation of Irregular's post-incident remediation.
+\item Career-network overlap may partly reflect normal specialization in a small field. Distinguishing specialization from echo-chamber effects requires comparison with other technical-policy fields.
+\item Funding, career, and access relationships establish structural conditions. On their own, they do not establish inaccurate research, editorial control, or improper coordination.
+\end{itemize}
+
+\subsection*{Reproducibility}
+The release includes \texttt{sources.csv}, \texttt{claims.csv}, \texttt{funding\_edges.csv}, \texttt{evaluator\_edges.csv}, and \texttt{metrics.csv}. Derived quantities retain their scope notes in those files.
+
+\subsection*{Writing and design method}
+The prose was manually audited against \href{https://github.com/AIScientists-Dev/academic-humanizer}{academic-humanizer}: generic transitions, empty emphasis, over-strong verbs, repetitive framing, and clause-stacked sentences were reduced while evidence-tied hedging, numbers, and citations were retained. The visual design draws on mechanisms seen in \href{https://github.com/Foadsf/vintage-latex}{vintage-latex} and \href{https://github.com/jemmybutton/fiziko}{fiziko}, but no template or illustration source from those repositories is copied into this report.
+
+\clearpage
+\section{Source Ledger}
+\small
+Grades A/B/C describe source type and directness, not an overall credibility score for an institution. URLs open the original source.
+\medskip
+\input{source_ledger.tex}
+\normalsize
+
+\printerrule
+\begin{center}
+\footnotesize Version 1.0 · Public sources through 17 September 2026
+\end{center}
+\end{document}
