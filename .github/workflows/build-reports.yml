@@ -42,7 +42,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             texlive-xetex texlive-latex-extra texlive-pictures texlive-lang-chinese texlive-fonts-recommended \
-            fonts-ebgaramond fonts-noto-core fonts-noto-cjk fonts-dejavu-core poppler-utils
+            fonts-ebgaramond fonts-ebgaramond-extra fonts-noto-core fonts-noto-cjk fonts-dejavu-core poppler-utils
           fc-cache -f
 
       - name: Build PDFs
