@@ -1,0 +1,59 @@
+name: Build bilingual reports
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.bootstrap/**'
+      - 'source_ledger.tex'
+      - 'report_style.tex'
+      - 'build.sh'
+      - '.github/workflows/build-reports.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble canonical report sources
+        shell: bash
+        run: |
+          cat .bootstrap/report_en.* > report_en.tex
+          cat .bootstrap/report_zh.* > report_zh.tex
+          echo '4428b293a47c3af767316e7e0766e0d00c08ae3e68695ab2bafbf64bb8133a0b  report_en.tex' | sha256sum -c -
+          echo '03dcb2153795d9656d23c15bf8719495657f62028fb2a67fa98fdbaeed6c476b  report_zh.tex' | sha256sum -c -
+          echo '84195c8ddb85d07d6fa556d45dc764a6f0ee99b468607914b6d846f068feee69  source_ledger.tex' | sha256sum -c -
+
+      - name: Install XeLaTeX and fonts
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex texlive-latex-extra texlive-pictures texlive-lang-chinese \
+            fonts-ebgaramond fonts-noto-core fonts-noto-cjk fonts-dejavu-core
+          fc-cache -f
+
+      - name: Build PDFs
+        shell: bash
+        run: |
+          chmod +x build.sh
+          ./build.sh
+          pdfinfo ai_risk_agenda_en.pdf | grep '^Pages:'
+          pdfinfo ai_risk_agenda_zh.pdf | grep '^Pages:'
+
+      - name: Commit sources and PDFs
+        shell: bash
+        run: |
+          rm -rf .bootstrap
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A report_en.tex report_zh.tex ai_risk_agenda_en.pdf ai_risk_agenda_zh.pdf report_en.pdf report_zh.pdf .bootstrap
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add bilingual report PDFs and canonical sources'
+            git push
+          fi
