@@ -1,0 +1,12 @@
+edge_id,model_release,evaluator,relationship,source_ids,evidence_grade
+E001,OpenAI GPT-4o,METR,external evaluation,S30,A
+E002,OpenAI GPT-4o,Apollo Research,external evaluation,S30,A
+E003,OpenAI o1,METR,external evaluation,S31,A
+E004,OpenAI o1,Apollo Research,external evaluation,S31,A
+E005,OpenAI GPT-5.6,METR,external evaluation,S32,A
+E006,OpenAI GPT-5.6,Apollo Research,external evaluation,S32,A
+E007,OpenAI GPT-5.6,UK AISI,external evaluation,S32,A
+E008,OpenAI GPT-5.6,Irregular,external cyber evaluation,S32,A
+E009,OpenAI GPT-6 Astra,Apollo Research,external evaluation,S33,A
+E010,OpenAI GPT-6 Astra,UK AISI,external evaluation,S33,A
+E011,OpenAI GPT-6 Astra,Irregular,external cyber evaluation,S33,A

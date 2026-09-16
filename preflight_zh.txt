@@ -1,0 +1,6 @@
+PDF: ai_risk_agenda_zh.pdf
+Pages: 16
+Encrypted: False
+Openable (PyMuPDF): True
+Likely scanned: False
+XFA present: False

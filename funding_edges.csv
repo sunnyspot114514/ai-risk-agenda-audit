@@ -1,0 +1,13 @@
+edge_id,source_node,target_node,relationship,amount_usd,period,source_ids,evidence_grade,notes
+F001,Good Ventures,Coefficient Giving,operational philanthropic partnership,,ongoing,S01,B,Founding/significant partnership; outsourced foundation staff relationship.
+F002,Coefficient Giving,MATS,cash donation,15453260,2025,S10,A,Aggregate of two disclosed 2025 Coefficient donations.
+F003,Good Ventures Foundation,MATS,cash donation,4558450,2025,S10,A,Aggregate of two disclosed 2025 Good Ventures donations.
+F004,Good Ventures / Open Phil recommendation,Pattern Labs / Irregular,philanthropic grant,6800000,2024,S04,A,Two-year technological risk mitigation grant; not equity.
+F005,Good Ventures / Open Phil ecosystem,Apollo Research,philanthropic grants,3714180,2023-2024,S05;S06,A,Startup funding + general support.
+F006,Good Ventures / Open Phil ecosystem,Redwood Research,general support grants,16000000,2022-2023,S05,A,Two disclosed grants included in this total.
+F007,Future of Life Institute,Media and outreach,organizational expenditure,5795000,2025,S15,A,Audited/official functional expense category.
+F008,Future of Life Institute,Digital Media Accelerator,program budget ceiling,1200000,annualized ceiling,S16,B,"Up to $100k/month; ceiling, not guaranteed spend."
+F009,Future of Life Institute,Protect What's Human,advocacy campaign ceiling,8000000,2026,S18,B,Up to $8m announced campaign ceiling.
+F010,Coefficient Giving,AI safety/security/field-building,grant commitments,168000000,2024,S02,B,"Commitments, not necessarily cash outflow in same year."
+F011,Coefficient Giving,AI safety/security/field-building,grant commitments,351000000,2025,S02,B,Commitments.
+F012,Coefficient Giving,AI safety/security/field-building,projected commitments,1000000000,2026 floor,S02,B,Reported as on track for >$1bn; stored here as floor.

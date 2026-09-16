@@ -1,0 +1,105 @@
+\usepackage[a4paper,top=22mm,bottom=25mm,inner=25mm,outer=38mm,marginparwidth=28mm,marginparsep=5mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage[protrusion=false,expansion=false]{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=inkblue,urlcolor=inkblue,citecolor=inkblue]{hyperref}
+\usepackage{marginnote}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{lastpage}
+
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[
+  Path=/usr/share/fonts/truetype/ebgaramond/,
+  UprightFont=EBGaramond12-Regular.ttf,
+  BoldFont=EBGaramond12-Bold.ttf,
+  ItalicFont=EBGaramond12-Italic.ttf,
+  BoldItalicFont=EBGaramond12-Italic.ttf,
+  Numbers={OldStyle,Proportional}
+]{EB Garamond 12}
+\setsansfont{Noto Sans}[Scale=0.93]
+\setmonofont{DejaVu Sans Mono}[Scale=0.82]
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+
+\definecolor{paper}{HTML}{F7F1E6}
+\definecolor{ink}{HTML}{28231E}
+\definecolor{inkblue}{HTML}{37546B}
+\definecolor{rust}{HTML}{7B4F3C}
+\definecolor{olive}{HTML}{68705A}
+\definecolor{rulegray}{HTML}{BDB3A5}
+\definecolor{soft}{HTML}{EFE5D7}
+\definecolor{softblue}{HTML}{E5ECEE}
+\definecolor{softgreen}{HTML}{E7ECE2}
+\pagecolor{paper}
+\color{ink}
+
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0.14em}
+\setlength{\emergencystretch}{2em}
+\linespread{1.045}
+\setlist[itemize]{leftmargin=1.65em,itemsep=.22em,topsep=.35em}
+\setlist[enumerate]{leftmargin=1.85em,itemsep=.22em,topsep=.35em}
+\renewcommand{\arraystretch}{1.15}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\footnotesize\textsc{Who Sets the AI Risk Agenda?}}
+\fancyhead[RO]{\footnotesize\textsc{Open-source audit · 17 Sep 2026}}
+\fancyfoot[C]{\footnotesize\thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\titleformat{\section}{\Large\bfseries\color{ink}}{\thesection}{.75em}{}[\vspace{.25em}\color{rulegray}\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{rust}}{\thesubsection}{.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{inkblue}}{\thesubsubsection}{.55em}{}
+\titlespacing*{\section}{0pt}{1.6em}{.8em}
+\titlespacing*{\subsection}{0pt}{1.15em}{.5em}
+
+\newcommand{\src}[1]{\hyperlink{src:#1}{\textsuperscript{\textcolor{inkblue}{[#1]}}}}
+\newcommand{\claim}[1]{\texttt{#1}}
+\newcommand{\gradepill}[1]{\fcolorbox{rulegray}{soft}{\sffamily\scriptsize\strut Evidence #1}}
+\newcommand{\statuspill}[1]{\fcolorbox{rulegray}{softblue}{\sffamily\scriptsize\strut #1}}
+\newcommand{\evidencenote}[2]{\marginnote{\raggedright\sffamily\scriptsize\textbf{#1}\\#2}}
+\newcommand{\printerrule}{\par\vspace{.45em}\begin{center}\color{rulegray}\rule{.20\linewidth}{.35pt}\hspace{.45em}\rule{.08\linewidth}{1pt}\hspace{.45em}\rule{.20\linewidth}{.35pt}\end{center}\vspace{.1em}}
+
+\newmdenv[
+  backgroundcolor=soft,
+  linecolor=rulegray,
+  linewidth=.55pt,
+  roundcorner=0pt,
+  leftmargin=0pt,rightmargin=0pt,
+  innerleftmargin=9pt,innerrightmargin=9pt,innertopmargin=7pt,innerbottommargin=7pt,
+  skipabove=7pt,skipbelow=8pt
+]{evidencebox}
+
+\newmdenv[
+  backgroundcolor=softgreen,
+  linecolor=olive,
+  linewidth=.6pt,
+  leftmargin=0pt,rightmargin=0pt,
+  innerleftmargin=9pt,innerrightmargin=9pt,innertopmargin=7pt,innerbottommargin=7pt,
+  skipabove=7pt,skipbelow=8pt
+]{counterbox}
+
+\captionsetup{font=small,labelfont=bf,labelsep=period}

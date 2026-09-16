@@ -1,0 +1,10 @@
+Metric,Value,Scope,Notes
+MATS_2025_cash_total_usd,20891404,MATS 2025 disclosed cash donations,Excludes in-kind support and other years
+MATS_2025_coefficient_share_pct,73.97,MATS 2025 disclosed cash donations,Aggregated by donor
+MATS_2025_coefficient_plus_good_ventures_share_pct,95.79,MATS 2025 disclosed cash donations,Aggregated by donor
+MATS_2025_HHI,0.5954,MATS 2025 disclosed cash donations,0-1 scale
+MATS_2025_HHI_10000,5954,MATS 2025 disclosed cash donations,0-10000 scale
+OpenAI_4_release_evaluator_slots,11,GPT-4o;o1;GPT-5.6;GPT-6 Astra,Selected external frontier-risk evaluator slots
+OpenAI_4_release_top2_share_pct,63.64,GPT-4o;o1;GPT-5.6;GPT-6 Astra,Pilot not market-wide
+OpenAI_4_release_evaluator_HHI,0.2727,GPT-4o;o1;GPT-5.6;GPT-6 Astra,Pilot not market-wide
+OpenAI_4_release_evaluator_HHI_10000,2727,GPT-4o;o1;GPT-5.6;GPT-6 Astra,Pilot not market-wide
