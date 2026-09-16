@@ -1,0 +1,75 @@
+Coefficient describes Good Ventures as its founding and most significant partnership and says it provides services comparable to outsourced foundation staff.\src{S01} In September 2026, Coefficient reported AI safety, security, and field-building grant commitments of \$168M in 2024, \$351M in 2025, and more than \$1B projected for 2026.\src{S02} The same document discusses finding founders, creating organizations, and expanding the talent base.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=.82\linewidth,height=54mm,ybar,bar width=18pt,ymin=0,ymax=1100,ylabel={USD millions},symbolic x coords={2024,2025,2026},xtick=data,nodes near coords,nodes near coords align={vertical},axis line style={draw=rulegray},tick style={draw=rulegray},ymajorgrids=true,grid style={draw=rulegray!55}]
+\addplot coordinates {(2024,168) (2025,351) (2026,1000)};
+\end{axis}
+\end{tikzpicture}
+\caption{Coefficient's disclosed AI safety, security, and field-building commitments. The 2026 bar uses \$1B as a lower bound.}
+\end{figure}
+
+\subsection{MATS 2025 funding structure}
+MATS publishes itemized 2025 cash donations.\src{S10} Aggregating by donor gives \$20,891,404 in total. Coefficient supplied \$15,453,260 and Good Ventures supplied \$4,558,450.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrr}
+\toprule
+Donor & 2025 cash (USD) & Share \\
+\midrule
+Coefficient Giving & 15,453,260 & 73.97\% \\
+Good Ventures Foundation & 4,558,450 & 21.82\% \\
+BERI & 450,000 & 2.15\% \\
+Survival and Flourishing Fund & 289,000 & 1.38\% \\
+All other disclosed donors & 140,694 & 0.67\% \\
+\midrule
+Total & 20,891,404 & 100\% \\
+\bottomrule
+\end{tabular}
+\caption{Donor-aggregated MATS 2025 disclosed cash donations.}
+\end{table}
+
+\[
+FCI_{MATS,2025}=HHI\approx0.5954=5954/10000.
+\]
+
+\subsection{Early philanthropic capital in evaluation and research organizations}
+Good Ventures grant records show a \$6.8M grant to Pattern Labs, later Irregular, in 2024;\src{S04} at least \$3.71418M to Apollo Research across 2023-24;\src{S05}\src{S06} and at least \$16M to Redwood Research across 2022-23.\src{S05} These are philanthropic-support records. They should not be recoded as payments for particular evaluation outcomes or as equity investments.
+
+\section{Talent Pipelines and Career Flows}
+\subsection{MATS career pathways}
+MATS lists frontier labs, AI-safety evaluators, funders, and new research organizations among its post-program pathways.\src{S14} Public alumni pages provide concrete examples. Marius Hobbhahn later led Apollo Research;\src{S11} Joseph Bloom later led Model Transparency at UK AISI;\src{S12} Quentin Feuillade-Montixi later worked as a METR contractor on pre-release model evaluation.\src{S13}
+
+These pathways show how one upstream training program can supply researchers to labs, evaluators, and government institutions. A stronger homogeneity claim would require a full alumni comparison against other AI training programs.
+
+\subsection{Journalism pipelines}
+Tarbell states that a majority of its 2025 funding originated with Coefficient while its ethics policy denies donors personnel approval or editorial control.\src{S19} Its fellowship provides AI journalism training, a Bay Area summit, a nine-month newsroom placement, and a stipend.\src{S20} Kai Williams' public biography provides one example of overlap: prior MATS AI-safety research followed by a Tarbell journalism fellowship.\src{S21}
+
+The observable variables are training, placement, and source-network overlap. Their effect on framing must be measured from content samples rather than inferred from the funding relationship alone.
+
+\section{Who Produces AI Risk Evidence?}
+\subsection{OpenAI release-family evaluator pilot}
+The pilot covers GPT-4o, o1, GPT-5.6, and GPT-6 Astra and records only external organizations responsible for important frontier-risk evaluations.\src{S30}\src{S31}\src{S32}\src{S33}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lcccc}
+\toprule
+Evaluator & GPT-4o & o1 & GPT-5.6 & GPT-6 Astra \\
+\midrule
+Apollo Research & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+METR & $\checkmark$ & $\checkmark$ & $\checkmark$ & -- \\
+UK AISI & -- & -- & $\checkmark$ & $\checkmark$ \\
+Irregular & -- & -- & $\checkmark$ & $\checkmark$ \\
+\bottomrule
+\end{tabular}
+\caption{External-evaluator recurrence in the selected OpenAI release-family pilot.}
+\end{table}
+
+Across 11 evaluator slots, Apollo appears four times, METR three, UK AISI two, and Irregular two. The top-two share is 63.64\%, and
+\[
+ECI_{pilot}=\frac{4^2+3^2+2^2+2^2}{11^2}=\frac{33}{121}\approx0.2727.
+\]
+
