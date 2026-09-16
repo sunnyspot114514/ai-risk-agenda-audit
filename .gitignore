@@ -1,0 +1,8 @@
+build/
+_render_*/
+contact_*.png
+*.aux
+*.log
+*.out
+*.toc
+*.xdv
