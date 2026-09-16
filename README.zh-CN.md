@@ -8,17 +8,27 @@
 
 分析基于公开申报、审计财务、官方 grant records、事故复盘、system card、机构披露、可靠新闻与同行评审研究。所有关系按类型记录；资金、就业、模型访问、评估合同、媒体 fellowship 与政策倡议不会被合并成同一种“关联”。
 
+## 报告
+
+- [中文版报告 — PDF，16 页](ai_risk_agenda_zh.pdf)
+- [English report — PDF, 17 pages](ai_risk_agenda_en.pdf)
+- [中文版 LaTeX 源码](report_zh.tex)
+- [English LaTeX source](report_en.tex)
+
+两种语言版本共享同一套证据台账和机器可读溯源数据。
+
 ## 核心材料
 
+- [`sources.csv`](sources.csv)：来源编号、URL、证据等级与说明
+- [`claims.csv`](claims.csv)：主张与来源映射、核验状态及限制
 - [`funding_edges.csv`](funding_edges.csv)：资金与组织关系边
 - [`evaluator_edges.csv`](evaluator_edges.csv)：选定模型 release family 与外部 evaluator 的关系
 - [`metrics.csv`](metrics.csv)：集中度指标、计算结果与适用范围
+- [`source_ledger.tex`](source_ledger.tex)：嵌入两份报告的可点击来源台账
 - [`TEXT_AUDIT.md`](TEXT_AUDIT.md)：基于 academic-humanizer 的文本审计与修订记录
 - [`preflight_zh.txt`](preflight_zh.txt) / [`preflight_en.txt`](preflight_en.txt)：中英文 PDF 的预检记录
 - [`report_style.tex`](report_style.tex)：双语报告共用的 LaTeX 样式
 - [`build.sh`](build.sh)：XeLaTeX 构建脚本
-
-完整发布包包含中英文报告、逐条 Source Ledger、claim-to-source 映射与机器可读来源表；两种语言版本共享同一套底层证据数据。
 
 ## 证据规则
 
@@ -42,7 +52,7 @@
 ./build.sh
 ```
 
-脚本会分别编译中英文版本两次，使目录与页码引用稳定。
+脚本会分别编译中英文版本两次，使目录与页码引用稳定。GitHub Actions 也会从规范 LaTeX 源码重新构建两份 PDF，并检查英文版 17 页、中文版 16 页。
 
 ## 文本与设计
 
