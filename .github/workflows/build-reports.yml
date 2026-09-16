@@ -48,8 +48,17 @@ jobs:
       - name: Build PDFs
         shell: bash
         run: |
+          set +e
           chmod +x build.sh
           ./build.sh
+          status=$?
+          if [ "$status" -ne 0 ]; then
+            echo '=== report_zh.log (tail) ==='
+            tail -n 160 build/report_zh.log 2>/dev/null || true
+            echo '=== report_en.log (tail) ==='
+            tail -n 160 build/report_en.log 2>/dev/null || true
+            exit "$status"
+          fi
           pdfinfo ai_risk_agenda_en.pdf | grep '^Pages:'
           pdfinfo ai_risk_agenda_zh.pdf | grep '^Pages:'
 
