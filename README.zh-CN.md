@@ -42,6 +42,12 @@
 
 关系边只证明公开资料中存在对应关系。涉及动机、编辑控制、研究质量或协调行为的更强判断，需要额外证据支持。
 
+## 相关公共记录重建
+
+- [Kevinnbass/Metr-Deep](https://github.com/kevinnbass/metr-deep)：一套独立的 METR 公共记录重建，覆盖资金、实物支持、模型访问、人员关系、治理条件与项目独立性；其流程包含逐行 provenance、对抗审计、claim gate，并严格区分不同 money type 与 legal entity。
+
+本仓库将 `Metr-Deep` 作为交叉核验和方法论参照，而不把它当成一手材料的替代品。本文中的事实主张仍以原始公开记录或单独分级的来源为依据。
+
 ## 可复现性
 
 报告中的派生指标保留明确 scope。例如，MATS donor HHI 只描述其 2025 年公开现金捐赠；evaluator HHI 只描述选定 OpenAI release-family pilot。尚未形成稳定估计的指标保持为空，而不会用案例材料代替大样本估计。
