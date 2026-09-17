@@ -42,6 +42,12 @@ Both editions use the same evidence ledger and machine-readable provenance data.
 
 A recorded edge establishes only that the relationship is supported by public evidence. Stronger claims about motive, editorial control, research quality, or coordination require separate evidence.
 
+## Related public-records reconstructions
+
+- [Kevinnbass/Metr-Deep](https://github.com/kevinnbass/metr-deep) — an independent public-records reconstruction of METR's funding, in-kind support, access, personnel relationships, governance conditions, and project independence. The pack uses row-level provenance, adversarial audits, a claim gate, and strict separation of money types and legal entities.
+
+We cite `Metr-Deep` as a cross-check and methodological comparison, not as a substitute for primary evidence. Claims in this repository remain grounded in primary records or separately graded sources.
+
 ## Reproducibility
 
 Derived metrics retain explicit scope. For example, the MATS donor HHI describes only its disclosed 2025 cash donations, while the evaluator HHI describes only the selected OpenAI release-family pilot. Metrics without a sufficiently stable estimate are left blank rather than inferred from a handful of cases.
